@@ -41,6 +41,7 @@
       <% if (userService.getCurrentUser() != null) { %>
       	<li><a href="<%= userService.createLogoutURL("/") %>">Se déconnecter</a></li>
         <li><a href="#book">Réserver</a></li>
+        <li><a href="#github">Github</a></li>
         <li><a href="#" ng-click="displayResa()">Mes Réservations</a></li>
       <% } %>
         <li><a href="#band">Band</a></li>
@@ -184,10 +185,16 @@
   </div>
 </div>
 
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+<div id="github" class="container text-center">
+  <h3>Github Link below :</h3>
+  <div class="row" style="text-align:center;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2><a href="https://github.com/staniskas/wheretowork">Github</a></h2>
+    </div>
+  </div>
+</div>
+
 
 <!-- Footer -->
 <footer class="text-center">
