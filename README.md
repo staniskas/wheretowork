@@ -7,7 +7,7 @@ Link to the app : https://1-dot-throughputput.appspot.com/
 Bored to run everywhere to find an available room where you can work properly ? We have the solution ! With a simple app you can find available room and you can even do the reservation to let everyone knows that it's taken !
 
 # How to use it
-There is one simple page, you have to lo ing with your google account, chose a date, add the emails of your friends and you're good to go !
+There is one simple page, you have to loging with your google account, chose a date, add the emails of your friends and you're good to go !
 
 # Datas
 In order to keep the datas up to date, we weekly reload them in the datastore (every sunday arround 2:00).
