@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/clear</url>
+    <description>clear the events in the database to update the later</description>
+    <schedule>every sunday 02:00</schedule>
+  </cron>
+  <cron>
+    <url>/load</url>
+    <description>daily update datastore</description>
+    <schedule>every sunday 02:20</schedule>
+  </cron>
+</cronentries>

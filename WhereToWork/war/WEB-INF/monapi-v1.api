@@ -1,0 +1,244 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://throughputput.appspot.com/_ah/api",
+  "name" : "monapi",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "discovery" : [ "PUBLIC" ],
+  "adapter" : {
+    "bns" : "https://throughputput.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "monapi.whereToWorkEndpoint.reserve" : {
+      "path" : "reserve",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "wheretowork.whereToWorkEndpoint.reserve",
+      "request" : {
+        "parameters" : {
+          "bookingDate" : {
+            "type" : "string",
+            "required" : true
+          },
+          "room" : {
+            "type" : "string",
+            "required" : true
+          },
+          "when" : {
+            "type" : "string",
+            "required" : true
+          },
+          "mails" : {
+            "type" : "string",
+            "required" : true
+          },
+          "userId" : {
+            "type" : "string",
+            "required" : true
+          },
+          "nbPers" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "monapi.whereToWorkEndpoint.listRoom" : {
+      "path" : "rooms/liste",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "wheretowork.whereToWorkEndpoint.listRoom",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "monapi.whereToWorkEndpoint.listEvent" : {
+      "path" : "rooms/eventsList/{date}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "wheretowork.whereToWorkEndpoint.listEvent",
+      "request" : {
+        "parameters" : {
+          "date" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "monapi.whereToWorkEndpoint.getMyResa" : {
+      "path" : "myResa/{userId}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "wheretowork.whereToWorkEndpoint.getMyResa",
+      "request" : {
+        "parameters" : {
+          "userId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "monapi.whereToWorkEndpoint.cancelResa" : {
+      "path" : "cancelResa/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "wheretowork.whereToWorkEndpoint.cancelResa",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Entity" : {
+        "id" : "Entity",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "kind" : {
+            "type" : "string"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "propertiesFrom" : {
+            "$ref" : "Entity"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "properties" : {
+            "$ref" : "JsonMap"
+          }
+        }
+      },
+      "Key" : {
+        "id" : "Key",
+        "type" : "object",
+        "properties" : {
+          "kind" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "namespace" : {
+            "type" : "string"
+          },
+          "complete" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "JsonMap" : {
+        "id" : "JsonMap",
+        "type" : "object"
+      },
+      "EntityCollection" : {
+        "id" : "EntityCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Entity"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "wheretowork.whereToWorkEndpoint.reserve" : {
+      },
+      "wheretowork.whereToWorkEndpoint.listRoom" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "wheretowork.whereToWorkEndpoint.listEvent" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "wheretowork.whereToWorkEndpoint.getMyResa" : {
+        "response" : {
+          "$ref" : "EntityCollection"
+        }
+      },
+      "wheretowork.whereToWorkEndpoint.cancelResa" : {
+      }
+    }
+  }
+}
