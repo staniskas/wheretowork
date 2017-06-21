@@ -10,9 +10,10 @@ There is one simple page, you have to lo ing with your google account, chose a d
 # Datas
 In order to keep the datas up to date, we weekly reload them in the datastore (every sunday arround 2:00).
 The datastore contains 3 entities, which are :
-• The rooms, where all the rooms are stored with their link to the calendar
-• All the events get from the calendar of each room (which is update every week)
-• And finally the reservation
+
+- The rooms, where all the rooms are stored with their link to the calendar
+- All the events get from the calendar of each room (which is update every week)
+- And finally the reservation
  
  
 
