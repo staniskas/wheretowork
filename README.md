@@ -1,5 +1,6 @@
 # wheretowork
-WhereToWork web project M1 Alternance
+WhereToWork web project M1 Alternance.
+
 Link to the app : https://1-dot-throughputput.appspot.com/
 
 # Description
